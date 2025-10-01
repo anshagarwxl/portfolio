@@ -12,7 +12,7 @@ export interface Skill {
   logoKey: string;
 }
 
-export const skills: Record<SkillCategory, Skill[]> = {
+export const skills: Partial<Record<SkillCategory, Skill[]>> = {
   'Languages': [
     { name: 'C', category: 'Languages', logoKey: 'c' },
     { name: 'C++', category: 'Languages', logoKey: 'cplusplus' },

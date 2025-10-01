@@ -89,18 +89,21 @@ export default function AboutPage() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-2xl font-bold mb-4">Skills</h2>
-            {Object.keys(skills).map((category) => (
-              <div key={category} className="mb-6">
-                <h3 className="text-lg font-semibold mb-3">{category}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {skills[category as SkillCategory].map((skill) => (
-                    <Badge key={skill.name} variant="secondary">
-                      {skill.name}
-                    </Badge>
-                  ))}
+            {(Object.keys(skills) as string[]).map((category) => {
+              const list = skills[category as SkillCategory] ?? []; // ✅ Fix: avoid undefined
+              return (
+                <div key={category} className="mb-6">
+                  <h3 className="text-lg font-semibold mb-3">{category}</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {list.map((skill) => (
+                      <Badge key={skill.name} variant="secondary">
+                        {skill.name}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
       </div>

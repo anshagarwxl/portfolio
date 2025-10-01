@@ -1,16 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TechIcon } from "@/components/tech-icon";
 import { Badge } from "@/components/ui/badge";
 import { skills, SkillCategory } from "@/data/skills";
 
-
 export function SkillsShowcase() {
-  const [selectedCategory, setSelectedCategory] = useState<SkillCategory>("Languages");
-  const categories = Object.keys(skills) as SkillCategory[];
+  // Compute available categories from keys actually present in `skills`
+  const categories = useMemo(
+    () => (Object.keys(skills) as string[]) as SkillCategory[],
+    []
+  );
+
+  // Prefer "Languages" if it exists; otherwise use the first available; otherwise fallback to "Languages"
+  const initialCategory: SkillCategory =
+    (categories.includes("Languages" as SkillCategory)
+      ? "Languages"
+      : categories[0]) || ("Languages" as SkillCategory);
+
+  const [selectedCategory, setSelectedCategory] = useState<SkillCategory>(initialCategory);
 
   return (
     <section className="py-12 md:py-24">
@@ -37,10 +47,12 @@ export function SkillsShowcase() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-8 md:mt-12"
         >
-          <Tabs defaultValue="Languages" 
+          <Tabs
+            defaultValue={initialCategory}
             value={selectedCategory}
             onValueChange={(value) => setSelectedCategory(value as SkillCategory)}
-            className="w-full">
+            className="w-full"
+          >
             <div className="flex justify-center mb-8">
               <TabsList className="flex flex-wrap gap-2 h-auto">
                 {categories.map((category) => (
@@ -54,31 +66,37 @@ export function SkillsShowcase() {
                 ))}
               </TabsList>
             </div>
-            
-            {categories.map((category) => (
-              <TabsContent key={category} value={category} className="w-full">
-                <div className="bg-muted/50 rounded-lg p-6">
-                  <div className="flex flex-wrap gap-3 justify-center">
-                    {skills[category].map((skill, index) => (
-                      <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3, delay: index * 0.05 }}
-                      >
-                    <Badge 
-                        variant="outline" 
-                        className="text-sm py-2 px-4 bg-background hover:bg-accent transition-colors flex items-center gap-2"
+
+            {categories.map((category) => {
+              const list = skills[category] ?? []; // ← safe fallback
+              return (
+                <TabsContent key={category} value={category} className="w-full">
+                  <div className="bg-muted/50 rounded-lg p-6">
+                    <div className="flex flex-wrap gap-3 justify-center">
+                      {list.map((skill, index) => (
+                        <motion.div
+                          key={skill.name}
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.3, delay: index * 0.05 }}
                         >
-                        <TechIcon logoKey={skill.logoKey} name={skill.name} className="h-5 w-5" />
-                        {skill.name}
-                    </Badge>
-                      </motion.div>
-                    ))}
+                          <Badge
+                            variant="outline"
+                            className="text-sm py-2 px-4 bg-background hover:bg-accent transition-colors flex items-center gap-2"
+                          >
+                            <TechIcon logoKey={skill.logoKey} name={skill.name} className="h-5 w-5" />
+                            {skill.name}
+                          </Badge>
+                        </motion.div>
+                      ))}
+                      {list.length === 0 && (
+                        <p className="text-muted-foreground text-sm">No skills listed in this category yet.</p>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </TabsContent>
-            ))}
+                </TabsContent>
+              );
+            })}
           </Tabs>
         </motion.div>
       </div>

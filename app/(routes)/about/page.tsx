@@ -11,6 +11,7 @@ export default function AboutPage() {
   return (
     <section className="py-12 md:py-24">
       <div className="container px-4 md:px-6 mx-auto">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,7 +26,9 @@ export default function AboutPage() {
           </p>
         </motion.div>
 
+        {/* Two-column layout */}
         <div className="grid gap-8 md:grid-cols-2">
+          {/* Left column - Who I Am + Education */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -34,13 +37,15 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-4">Who I Am</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I&apos;m Achyut Katiyar, a Full Stack Developer with a passion for creating innovative web applications and exploring blockchain technologies. I&apos;m currently pursuing a Master&apos;s in Computer Science at Northeastern University, where I continue to expand my knowledge and skills.
+                I&apos;m Ansh Agarwal, a Computer Science student and aspiring Software Engineer with a passion for building things that matter. 
+                I like working on projects that connect people and simplify tasks, whether it&apos;s through full-stack web apps, backend systems, or hackathon-driven prototypes.
               </p>
               <p>
-                With expertise in Next.js, React, and various blockchain technologies, I enjoy building scalable and user-friendly applications that solve real-world problems. My background in computer science has given me a strong foundation in algorithms, data structures, and system design, which I apply to create efficient and maintainable code.
+                One of my key projects is Univoice, designed to bridge the gap between high school graduates and college mentors. 
+                I&apos;ve also built projects around expense tracking and SaaS optimization.
               </p>
               <p>
-                I&apos;m particularly interested in the intersection of web development and blockchain technology, where I&apos;ve developed several projects that leverage the power of decentralized systems to create secure and transparent applications.
+                My focus areas are Java, Spring Boot, and Python, and I&apos;m continuously exploring how these technologies can power practical, impactful applications.
               </p>
             </div>
 
@@ -77,13 +82,13 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
+          {/* Right column - Skills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-2xl font-bold mb-4">Skills</h2>
-            
             {Object.keys(skills).map((category) => (
               <div key={category} className="mb-6">
                 <h3 className="text-lg font-semibold mb-3">{category}</h3>
@@ -96,50 +101,6 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
-
-            <h2 className="text-2xl font-bold mt-8 mb-4">Achievements</h2>
-            <Card>
-              <CardContent className="p-4">
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Led University&apos;s Technical Team as Convener, increasing student engagement by 40% through committee formation and industry-aligned website redesigns.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Served as a Board Member of the APP Design and Development Club, mentoring newcomers and improving skills by 60%.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Won $1500 Nillion Track Prize at Hacker House Goa 2024.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Awarded $600 at Move it with Aptos event.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Received $500 Marbelism Track Prize at HACKSRM 2.0 2024.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2 font-bold">•</span>
-                    <span>
-                      Won $100 at APPATHON 2022.
-                    </span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
           </motion.div>
         </div>
       </div>

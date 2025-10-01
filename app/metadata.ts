@@ -2,8 +2,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Achyut Katiyar | Portfolio",
-  description: "Full Stack Developer & Machine Learning Enthusiast",
+  title: "Ansh Agarwal | Portfolio",
+  description: "Aspiring Entrepreneur",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },

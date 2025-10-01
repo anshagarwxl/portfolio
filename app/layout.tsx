@@ -3,43 +3,38 @@ import { ClientLayout } from "./client-layout";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Achyut Katiyar | Full Stack Developer",
-  description: "Full Stack Developer & Machine Learning Enthusiast with expertise in Next.js, React, and blockchain technologies.",
-  metadataBase: new URL("https://achyutkatiyar.com"),
-  
-  // Basic metadata
-  applicationName: "Achyut Katiyar Portfolio",
-  authors: [{ name: "Achyut Katiyar" }],
-  keywords: ["Full Stack Developer", "Web3", "Blockchain", "Next.js", "React", "Machine Learning"],
-  
+  title: "Ansh Agarwal | Software Engineer",
+  description:
+    "Portfolio of Ansh Agarwal — Computer Science student and aspiring Software Engineer focused on Java, Spring Boot, Python, and building practical, impactful applications.",
+  applicationName: "Ansh Agarwal Portfolio",
+  authors: [{ name: "Ansh Agarwal" }],
+  keywords: [
+    "Ansh Agarwal",
+    "Software Engineer",
+    "Portfolio",
+    "Java",
+    "Spring Boot",
+    "Python",
+    "Full Stack",
+    "Next.js",
+    "React",
+  ],
   openGraph: {
     type: "website",
-    url: "https://achyutkatiyar.com",
-    title: "Achyut Katiyar | Full Stack Developer",
-    description: "Full Stack Developer & Blockchain and Machine Learning Enthusiast with expertise in Next.js, React, and blockchain technologies.",
-    siteName: "Achyut Katiyar",
-    locale: "en_US",
+    title: "Ansh Agarwal | Software Engineer",
+    description:
+      "Portfolio of Ansh Agarwal — projects, experience, and contact.",
+    siteName: "Ansh Agarwal",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Achyut Katiyar - Portfolio",
+        alt: "Ansh Agarwal — Portfolio",
       },
     ],
   },
-  
-  icons: {
-    icon: [
-      { url: "/favicon.ico" },
-      { url: "/icon.png", type: "image/png" },
-    ],
-    apple: { url: "/apple-touch-icon.png" },
-  },
-  
-  alternates: {
-    canonical: "https://achyutkatiyar.com",
-  },
+  // No icons here on purpose (you said you want to remove the tab icon)
 };
 
 export default function RootLayout({

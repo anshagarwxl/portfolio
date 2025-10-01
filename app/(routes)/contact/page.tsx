@@ -90,7 +90,7 @@ export default function ContactPage() {
                 <div className="mt-auto pt-6">
                   <h3 className="font-medium mb-2">Current Location</h3>
                   <p className="text-sm text-muted-foreground">
-                    Boston, Massachusetts, USA
+                    Chennai, India
                   </p>
                 </div>
               </CardContent>

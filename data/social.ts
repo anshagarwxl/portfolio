@@ -27,7 +27,7 @@ export interface SocialLink {
     {
       id: "phone",
       name: "Phone",
-      url: "tel:+",
+      url: "tel:+9870109395",
       icon: "phone"
     }
   ];

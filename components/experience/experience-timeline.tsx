@@ -1,7 +1,8 @@
+// components/experience/experience-timeline.tsx
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Microscope, Briefcase, GraduationCap, Users } from "lucide-react";
+import { ArrowRight, MapPin, Briefcase, GraduationCap, Users } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -11,22 +12,19 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function ExperienceTimeline() {
   const [activeTab, setActiveTab] = useState<string>("all");
-  
-  // Filter experiences based on active tab
-  const filteredExperiences = activeTab === "all" 
-    ? experiences 
-    : experiences.filter(exp => exp.type === activeTab);
 
-  // Function to get icon based on experience type
+  // Filter experiences based on active tab
+  const filteredExperiences =
+    activeTab === "all" ? experiences : experiences.filter((exp) => exp.type === activeTab);
+
+  // Icon by type (research removed)
   const getExperienceIcon = (type: string | undefined) => {
-    switch(type) {
-      case 'research':
-        return <Microscope className="h-5 w-5" />;
-      case 'work':
+    switch (type) {
+      case "work":
         return <Briefcase className="h-5 w-5" />;
-      case 'leadership':
+      case "leadership":
         return <Users className="h-5 w-5" />;
-      case 'education':
+      case "education":
         return <GraduationCap className="h-5 w-5" />;
       default:
         return <Briefcase className="h-5 w-5" />;
@@ -46,17 +44,23 @@ export function ExperienceTimeline() {
             Experience
           </h1>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            My professional journey in development and research
+            My professional journey in development
           </p>
         </motion.div>
-        
+
         <div className="flex justify-center mt-8">
           <Tabs defaultValue="all" className="w-full max-w-md">
-            <TabsList className="grid grid-cols-4 w-full">
-              <TabsTrigger value="all" onClick={() => setActiveTab("all")}>All</TabsTrigger>
-              <TabsTrigger value="work" onClick={() => setActiveTab("work")}>Work</TabsTrigger>
-              <TabsTrigger value="leadership" onClick={() => setActiveTab("leadership")}>Leadership</TabsTrigger>
-              <TabsTrigger value="research" onClick={() => setActiveTab("research")}>Research</TabsTrigger>
+            {/* 3 columns now */}
+            <TabsList className="grid grid-cols-3 w-full">
+              <TabsTrigger value="all" onClick={() => setActiveTab("all")}>
+                All
+              </TabsTrigger>
+              <TabsTrigger value="work" onClick={() => setActiveTab("work")}>
+                Work
+              </TabsTrigger>
+              <TabsTrigger value="leadership" onClick={() => setActiveTab("leadership")}>
+                Leadership
+              </TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
@@ -75,26 +79,22 @@ export function ExperienceTimeline() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative mb-12 flex flex-col md:flex-row"
               >
-                {/* Simple timeline dot */}
+                {/* timeline dot */}
                 <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary h-3 w-3 rounded-full" />
 
-                {/* Desktop Icon - shown only on desktop and positioned correctly */}
-                <div 
+                {/* Desktop icon */}
+                <div
                   className={`hidden md:block absolute -translate-y-6 ${
-                    index % 2 === 0 
-                      ? "right-[calc(50%+12px)]" // Right of timeline if card is on left
-                      : "left-[calc(50%+12px)]"  // Left of timeline if card is on right
+                    index % 2 === 0 ? "right-[calc(50%+12px)]" : "left-[calc(50%+12px)]"
                   } text-primary`}
                 >
                   {getExperienceIcon(experience.type)}
                 </div>
-                
-                {/* Mobile Icon - shown only on mobile */}
-                <div 
+
+                {/* Mobile icon */}
+                <div
                   className={`md:hidden absolute -translate-y-6 ${
-                    index % 2 === 0 
-                      ? "left-[calc(50%+12px)]"  // Right of timeline 
-                      : "right-[calc(50%+12px)]" // Left of timeline
+                    index % 2 === 0 ? "left-[calc(50%+12px)]" : "right-[calc(50%+12px)]"
                   } text-primary`}
                 >
                   {getExperienceIcon(experience.type)}
@@ -108,7 +108,9 @@ export function ExperienceTimeline() {
                         <div className="flex-1">
                           <CardTitle>
                             <h3 className="text-xl font-bold">{experience.title}</h3>
-                            <p className="text-sm text-muted-foreground mt-1">{experience.company}</p>
+                            <p className="text-sm text-muted-foreground mt-1">
+                              {experience.company}
+                            </p>
                           </CardTitle>
                         </div>
                         <Badge variant="outline" className="shrink-0">

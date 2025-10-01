@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Trophy, Medal, Award, Code, Cpu, Gamepad, Zap, BookOpen } from "lucide-react";
+import { Trophy, Medal, Award, Code, Cpu, Gamepad, Zap, BookOpen, Book, Laptop, Star, BookAIcon, TrophyIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -14,49 +14,50 @@ interface Achievement {
 const achievements: Achievement[] = [
   {
     icon: <Trophy className="h-6 w-6" />,
-    title: "Winner of Hacker House, Goa ($1500 Prize)",
+    title: "Technical Summer Intern @Infogain",
     colorClass: "text-yellow-600 dark:text-yellow-400",
   },
   {
     icon: <Medal className="h-6 w-6" />,
-    title: "Winner of Move it with Aptos Hackathon ($600 Prize)",
+    title: "Python Certified Developer(IIT Hyderabad)",
     colorClass: "text-blue-600 dark:text-blue-400",
   },
   {
-    icon: <Award className="h-6 w-6" />,
-    title: "Winner of HackSRM 5.0 ($500 Prize)",
-    colorClass: "text-green-600 dark:text-green-400",
+    icon: <Trophy className="h-6 w-6" />,
+    title: "10th Rank in Google GenAI Study Jams",
+    colorClass: "text-yellow-600 dark:text-yellow-400",
   },
   {
-    icon: <Trophy className="h-6 w-6" />,
-    title: "Winner of Appthon 1.0",
-    colorClass: "text-purple-600 dark:text-purple-400",
+    icon: <Award className="h-6 w-6" />,
+    title: "TOP 12 in Redbull Basement Hackathon",
+    colorClass: "text-blue-600 dark:text-blue-400",
+  },
+  {
+    icon: <Star className="h-6 w-6" />,
+    title: "Campus Partner @Perplexity ",
+    colorClass: "text-yellow-600 dark:text-yellow-400",
   },
   {
     icon: <BookOpen className="h-6 w-6" />,
-    title: "Convener of ADD (App Design & Development Club)",
+    title: "Technical Associate at Microsoft Ambassadors SRM",
     colorClass: "text-indigo-600 dark:text-indigo-400",
   },
   {
-    icon: <Cpu className="h-6 w-6" />,
-    title: "DDoS Attack Detection Researcher",
-    colorClass: "text-red-600 dark:text-red-400",
+    icon: <Book className="h-6 w-6" />,
+    title: "Human Resources Associate at Cherry+ Network",
+    colorClass: "text-yellow-600 dark:text-yellow-400",
   },
   {
-    icon: <Code className="h-6 w-6" />,
-    title: "Technical Convener of University Student Council",
-    colorClass: "text-teal-600 dark:text-teal-400",
+    icon: <Trophy className="h-6 w-6" />,
+    title: "Google Solution Challenge Participant",
+    colorClass: "text-purple-600 dark:text-purple-400",
   },
   {
-    icon: <Gamepad className="h-6 w-6" />,
-    title: "3x Valorant Tournament Champion",
-    colorClass: "text-amber-600 dark:text-amber-400",
+    icon: <BookAIcon className="h-6 w-6" />,
+    title: "Volunteering for Mckinsey & Company Forward Program",
+    colorClass: "text-yellow-600 dark:text-yellow-400",
   },
-  {
-    icon: <Zap className="h-6 w-6" />,
-    title: "Technical Executive of Infinitus (National Level Fest)",
-    colorClass: "text-cyan-600 dark:text-cyan-400",
-  },
+ 
 ];
 
 export function Achievements() {
@@ -72,7 +73,7 @@ export function Achievements() {
             Achievements
           </h2>
           <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed mt-4">
-            Recognition and milestones from my technical journey
+            Recognition and milestones from my journey
           </p>
         </motion.div>
         
@@ -106,11 +107,12 @@ export function Achievements() {
         </div>
         
         <div className="mt-10 inline-flex flex-wrap justify-center gap-2">
-          <Badge variant="secondary" className="text-sm py-1.5 px-3">Technical Leadership</Badge>
-          <Badge variant="secondary" className="text-sm py-1.5 px-3">Hackathon Winner</Badge>
-          <Badge variant="secondary" className="text-sm py-1.5 px-3">Research</Badge>
-          <Badge variant="secondary" className="text-sm py-1.5 px-3">Gaming</Badge>
-        </div>
+  <Badge variant="secondary" className="text-sm py-1.5 px-3">Entrepreneurship</Badge>
+  <Badge variant="secondary" className="text-sm py-1.5 px-3">Problem Solving</Badge>
+  <Badge variant="secondary" className="text-sm py-1.5 px-3">Research & Analysis</Badge>
+  <Badge variant="secondary" className="text-sm py-1.5 px-3">Marketing & Strategy</Badge>
+</div>
+
       </div>
     </section>
   );

@@ -24,7 +24,6 @@ const navItems: NavItem[] = [
   { title: "About", href: "/about" },
   { title: "Experience", href: "/experience" },
   { title: "Projects", href: "/projects" },
-  { title: "Blog", href: "/blog" },
   { title: "Contact", href: "/contact" },
 ];
 
@@ -38,80 +37,48 @@ export function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
-      // Determine scroll direction and toggle navbar visibility
+
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false); // Hide when scrolling down
+        setIsVisible(false);
       } else {
-        setIsVisible(true); // Show when scrolling up or at top
+        setIsVisible(true);
       }
-      
-      // Update scroll state for shadows and backdrop
+
       setIsScrolled(currentScrollY > 20);
-      
-      // Update last scroll position
       setLastScrollY(currentScrollY);
     };
 
-    // Set initial state
     handleScroll();
-    
-    // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [lastScrollY]);
 
-  // Update active section based on URL
   useEffect(() => {
-    const pathname = window.location.pathname;
-    setActiveSection(pathname);
+    setActiveSection(window.location.pathname);
   }, []);
 
-  // Navbar container variants for animations
   const navbarVariants = {
-    hidden: { 
-      y: -100,
-      opacity: 0 
-    },
+    hidden: { y: -100, opacity: 0 },
     visible: { 
       y: 0,
       opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20,
-        mass: 0.5,
-        duration: 0.1
-      }
+      transition: { type: "spring", stiffness: 300, damping: 20, mass: 0.5, duration: 0.1 }
     },
-    exit: {
-      y: -100,
-      opacity: 0,
-      transition: {
-        duration: 0.1,
-        ease: "easeInOut"
-      }
-    }
+    exit: { y: -100, opacity: 0, transition: { duration: 0.1, ease: "easeInOut" } }
   };
 
-  // Navbar link item variants for animations
   const itemVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: {
-        delay: 0.05 * i,
-        duration: 0.5,
-        ease: "easeOut"
-      }
+      transition: { delay: 0.05 * i, duration: 0.5, ease: "easeOut" }
     })
   };
 
-  // Adjust the backdrop blur and color based on theme
   const isScrolledBgClass = theme === 'dark' 
     ? "bg-background/30 backdrop-blur-md border-[0.5px] border-white/10 shadow-[0_8px_32px_rgba(255,255,255,0.03)]" 
     : "bg-background/40 backdrop-blur-md border-[0.5px] border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.1)]";
@@ -122,7 +89,6 @@ export function Navbar() {
 
   return (
     <>
-      {/* Hidden command palette for keyboard shortcuts */}
       <div className="sr-only">
         <CommandPalette />
       </div>
@@ -141,7 +107,6 @@ export function Navbar() {
           >
             <ThreeDCard className="w-full">
               <div className="flex items-center justify-between">
-                {/* Logo with fixed width */}
                 <div className="w-[160px]">
                   <Link 
                     href="/"
@@ -152,12 +117,11 @@ export function Navbar() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.5 }}
                     >
-                      Achyut Katiyar
+                      Ansh Agarwal
                     </motion.span>
                   </Link>
                 </div>
 
-                {/* Desktop Navigation - Centered */}
                 <div className="hidden md:flex justify-center flex-1">
                   <nav className="flex items-center gap-1">
                     {navItems.map((item, i) => (
@@ -187,7 +151,6 @@ export function Navbar() {
                   </nav>
                 </div>
                 
-                {/* Theme toggle - Right aligned with fixed width */}
                 <div className="w-[160px] flex justify-end">
                   <motion.div
                     initial={{ opacity: 0, scale: 0 }}
@@ -198,7 +161,6 @@ export function Navbar() {
                   </motion.div>
                 </div>
 
-                {/* Mobile Navigation */}
                 <Sheet>
                   <motion.div
                     initial={{ opacity: 0, scale: 0 }}
@@ -220,7 +182,7 @@ export function Navbar() {
                           href="/"
                           className="font-display text-2xl font-bold transition-colors hover:text-primary"
                         >
-                          Achyut Katiyar
+                          Ansh Agarwal
                         </Link>
                         <ThemeSwitch />
                       </div>

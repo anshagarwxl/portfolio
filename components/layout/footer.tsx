@@ -36,10 +36,9 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* About Section */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold">Achyut Katiyar</h3>
+            <h3 className="text-lg font-bold">Ansh Agarwal</h3>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Full Stack Developer & Machine Learning Enthusiast based in Boston,
-              specialized in creating modern web applications and blockchain solutions.
+            Ansh Agarwal | CS Engineering Student | Java, Web, AI/ML & Blockchain Enthusiast
             </p>
           </div>
           

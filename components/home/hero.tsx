@@ -102,7 +102,7 @@ export function Hero() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="max-w-[600px] text-muted-foreground md:text-xl"
               >
-A second-year CSE student with practical experience in Java and object-oriented programming, gained through internships, academic projects, and hackathons. Actively building a strong foundation in backend development, data structures, and real-world software engineering practices.
+ Computer Science student with hands-on experience in Java and object-oriented programming through internships, academic projects, and hackathons. Currently strengthening expertise in backend development and data structures while building real-world applications focused on scalability and problem-solving.
               </motion.p>
             </div>
             

@@ -36,7 +36,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Ansh Agarwal</h3>
             <p className="text-sm text-muted-foreground max-w-xs">
-            Ansh Agarwal | CS Engineering Student | Java, Web, AI/ML & Blockchain Enthusiast
+            Ansh Agarwal | CS Engineering Student | Java Full Stack
             </p>
           </div>
           

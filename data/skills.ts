@@ -24,10 +24,10 @@ export const skills: Partial<Record<SkillCategory, Skill[]>> = {
   ],
 
   'Frameworks/Libraries': [
-    { name: 'React.js', category: 'Frameworks/Libraries', logoKey: 'react' },
+
     { name: 'Tailwind CSS', category: 'Frameworks/Libraries', logoKey: 'tailwindcss' },
     { name: 'Spring Boot', category: 'Frameworks/Libraries', logoKey: 'spring' },
-    { name: 'Spring Security', category: 'Frameworks/Libraries', logoKey: 'spring' },
+
     { name: 'JDBC', category: 'Frameworks/Libraries', logoKey: 'java' },
     { name: 'Streamlit', category: 'Frameworks/Libraries', logoKey: 'streamlit' },
     { name: 'scikit-learn', category: 'Frameworks/Libraries', logoKey: 'python' }
@@ -37,7 +37,7 @@ export const skills: Partial<Record<SkillCategory, Skill[]>> = {
     { name: 'OOP', category: 'Concepts', logoKey: 'java' },
     { name: 'Data Structures & Algorithms', category: 'Concepts', logoKey: 'github' },
     { name: 'API Design', category: 'Concepts', logoKey: 'swagger' },
-    { name: 'Cybersecurity Basics', category: 'Concepts', logoKey: 'security' },
+
     { name: 'DBMS Concepts', category: 'Concepts', logoKey: 'mysql' },
     { name: 'RAG (Retrieval-Augmented Generation)', category: 'Concepts', logoKey: 'ai' }
   ],
@@ -45,11 +45,12 @@ export const skills: Partial<Record<SkillCategory, Skill[]>> = {
   'Tools': [
     { name: 'Git', category: 'Tools', logoKey: 'git' },
     { name: 'GitHub', category: 'Tools', logoKey: 'github' },
+    { name: 'AWS', category: 'Tools', logoKey: 'aws' },
     { name: 'VS Code', category: 'Tools', logoKey: 'vscode' },
     { name: 'IntelliJ IDEA', category: 'Tools', logoKey: 'intellij' },
     { name: 'Figma', category: 'Tools', logoKey: 'figma' },
     { name: 'JUnit', category: 'Tools', logoKey: 'java' },
-    { name: 'Cypress', category: 'Tools', logoKey: 'cypress' },
+
   ]
 };
 

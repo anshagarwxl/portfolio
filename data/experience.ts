@@ -19,7 +19,7 @@ export const experiences: Experience[] = [
       location: "On-Site/Noida",
       startDate: "June 2025",
       endDate: "July 2025",
-      description: "Software Engineering Intern – Backend\nInfogain | June 2025 – July 2025 | On-site, Noida",
+      description: "Worked on internal software solutions and automation tasks during the summer internship program.",
       achievements: [
         "Analyzed a NETSPI vulnerability assessment report of a client website, identifying additional security gaps and suggesting improved remediation strategies",
         "Developed a Java-based internal module using OOP principles for employee data management, implementing CRUD operations, access control, and basic reporting features",

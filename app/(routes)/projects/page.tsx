@@ -35,9 +35,6 @@ export default function ProjectsPage() {
           className="mt-8"
         >
           <div className="flex flex-wrap gap-2 justify-center mb-8">
-            <Badge variant="outline" className="text-sm py-2 px-3">
-              All Projects
-            </Badge>
             {allTechnologies.map((tech) => (
               <Badge
                 key={tech}

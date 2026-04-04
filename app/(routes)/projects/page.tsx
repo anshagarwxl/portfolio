@@ -9,13 +9,7 @@ import { projects } from "@/data/projects";
 const allTechnologies = ["Java", "OOP", "DSA", "Backend Development", "REST APIs", "Spring Boot", "MySQL", "Git"];
 
 export default function ProjectsPage() {
-  const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
-  const filteredProjects = activeFilter
-    ? projects.filter((project) =>
-        project.technologies.includes(activeFilter)
-      )
-    : projects;
 
   return (
     <section className="py-12 md:py-24">
@@ -41,19 +35,14 @@ export default function ProjectsPage() {
           className="mt-8"
         >
           <div className="flex flex-wrap gap-2 justify-center mb-8">
-            <Badge
-              variant={activeFilter === null ? "default" : "outline"}
-              className="cursor-pointer text-sm py-2 px-3"
-              onClick={() => setActiveFilter(null)}
-            >
-              All
+            <Badge variant="outline" className="text-sm py-2 px-3">
+              All Projects
             </Badge>
             {allTechnologies.map((tech) => (
               <Badge
                 key={tech}
-                variant={activeFilter === tech ? "default" : "outline"}
-                className="cursor-pointer text-sm py-2 px-3"
-                onClick={() => setActiveFilter(tech)}
+                variant="outline"
+                className="text-sm py-2 px-3"
               >
                 {tech}
               </Badge>
@@ -62,7 +51,7 @@ export default function ProjectsPage() {
         </motion.div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
-          {filteredProjects.map((project, index) => (
+{projects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -74,13 +63,7 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">
-              No projects found with the selected technology. Please try another filter.
-            </p>
-          </div>
-        )}
+
       </div>
     </section>
   );

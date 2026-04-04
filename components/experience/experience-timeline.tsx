@@ -7,30 +7,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { experiences } from "@/data/experience";
-import { useState } from "react";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+// Icon by type
+const getExperienceIcon = (type: string | undefined) => {
+  switch (type) {
+    case "work":
+      return <Briefcase className="h-5 w-5" />;
+    case "leadership":
+      return <Users className="h-5 w-5" />;
+    case "education":
+      return <GraduationCap className="h-5 w-5" />;
+    default:
+      return <Briefcase className="h-5 w-5" />;
+  }
+};
 
 export function ExperienceTimeline() {
-  const [activeTab, setActiveTab] = useState<string>("all");
-
-  // Filter experiences based on active tab
-  const filteredExperiences =
-    activeTab === "all" ? experiences : experiences.filter((exp) => exp.type === activeTab);
-
-  // Icon by type (research removed)
-  const getExperienceIcon = (type: string | undefined) => {
-    switch (type) {
-      case "work":
-        return <Briefcase className="h-5 w-5" />;
-      case "leadership":
-        return <Users className="h-5 w-5" />;
-      case "education":
-        return <GraduationCap className="h-5 w-5" />;
-      default:
-        return <Briefcase className="h-5 w-5" />;
-    }
-  };
-
   return (
     <section className="py-12 md:py-24">
       <div className="container px-4 md:px-6 mx-auto">
@@ -48,30 +40,13 @@ export function ExperienceTimeline() {
           </p>
         </motion.div>
 
-        <div className="flex justify-center mt-8">
-          <Tabs defaultValue="all" className="w-full max-w-md">
-            {/* 3 columns now */}
-            <TabsList className="grid grid-cols-3 w-full">
-              <TabsTrigger value="all" onClick={() => setActiveTab("all")}>
-                All
-              </TabsTrigger>
-              <TabsTrigger value="work" onClick={() => setActiveTab("work")}>
-                Work
-              </TabsTrigger>
-              <TabsTrigger value="leadership" onClick={() => setActiveTab("leadership")}>
-                Leadership
-              </TabsTrigger>
-            </TabsList>
-          </Tabs>
-        </div>
-
         <div className="mx-auto max-w-3xl mt-12">
           <div className="relative mx-auto">
             {/* Timeline Line */}
             <div className="absolute left-1/2 h-full w-[2px] -translate-x-1/2 bg-border" />
 
             {/* Timeline Items */}
-            {filteredExperiences.map((experience, index) => (
+            {experiences.map((experience, index) => (
               <motion.div
                 key={experience.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -145,3 +120,4 @@ export function ExperienceTimeline() {
     </section>
   );
 }
+

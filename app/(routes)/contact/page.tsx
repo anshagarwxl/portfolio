@@ -90,8 +90,20 @@ export default function ContactPage() {
                 <div className="mt-auto pt-6">
                   <h3 className="font-medium mb-2">Current Location</h3>
                   <p className="text-sm text-muted-foreground">
-                    Chennai, India
+                    Near current location: Chennai, India
                   </p>
+                  <div className="mt-4 rounded-lg overflow-hidden border h-48 w-full">
+                    <iframe
+                      src="https://www.openstreetmap.org/export/embed.html?bbox=80.2%2C12.9%2C80.3%2C13.0&amp;layer=mapnik&amp;marker=12.95%2C80.25"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Chennai Location"
+                    />
+                  </div>
                 </div>
               </CardContent>
             </Card>

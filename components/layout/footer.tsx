@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, Copyright, ExternalLink, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { socialLinks } from "@/data/social";
 
@@ -17,8 +17,6 @@ export function Footer() {
         return <Linkedin className="h-5 w-5" />;
       case "mail":
         return <Mail className="h-5 w-5" />;
-      case "phone":
-        return <Phone className="h-5 w-5" />;
       default:
         return null;
     }
@@ -71,8 +69,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="/resume.pdf" 
+                <a
+                  href="/anshagarwal_resume (1).pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
@@ -136,11 +134,7 @@ export function Footer() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mt-8 border-t pt-4"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center text-sm text-muted-foreground">
-              <Copyright className="mr-1 h-3.5 w-3.5" />
-              <span>{new Date().getFullYear()} Achyut Katiyar. All rights reserved.</span>
-            </div>
+          <div className="flex justify-center">
             <div className="text-sm text-muted-foreground flex items-center gap-1.5">
               <span>Built with</span>
               <Heart className="h-3.5 w-3.5 fill-primary text-primary" />
@@ -152,3 +146,4 @@ export function Footer() {
     </footer>
   );
 }
+

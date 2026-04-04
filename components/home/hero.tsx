@@ -28,7 +28,7 @@ export function Hero() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [displayedSkills.length]);
 
   // Get icon component for social links
   const getIconComponent = (iconName: string) => {
@@ -102,7 +102,7 @@ export function Hero() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="max-w-[600px] text-muted-foreground md:text-xl"
               >
-                A motivated engineering student with experience in Java, web development, AI & ML projects, and blockchain-based applications. Majoring in Computer Science Engineering
+A second-year CSE student with practical experience in Java and object-oriented programming, gained through internships, academic projects, and hackathons. Actively building a strong foundation in backend development, data structures, and real-world software engineering practices.
               </motion.p>
             </div>
             
@@ -120,10 +120,10 @@ export function Hero() {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a 
-                  href="/resume.pdf" 
-                  download="Achyut_Katiyar_Resume.pdf" 
-                  target="_blank"                      
+                <a
+                  href="/anshagarwal_resume (1).pdf"
+                  download="Ansh_Agarwal_Resume.pdf"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Download className="mr-2 h-4 w-4" />

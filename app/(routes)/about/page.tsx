@@ -11,7 +11,6 @@ export default function AboutPage() {
   return (
     <section className="py-12 md:py-24">
       <div className="container px-4 md:px-6 mx-auto">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -26,9 +25,7 @@ export default function AboutPage() {
           </p>
         </motion.div>
 
-        {/* Two-column layout */}
         <div className="grid gap-8 md:grid-cols-2">
-          {/* Left column - Who I Am + Education */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -37,15 +34,10 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold mb-4">Who I Am</h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I&apos;m Ansh Agarwal, a Computer Science student and aspiring Software Engineer with a passion for building things that matter. 
-                I like working on projects that connect people and simplify tasks, whether it&apos;s through full-stack web apps, backend systems, or hackathon-driven prototypes.
+                I&apos;m Ansh Agarwal, a Computer Science student and aspiring Software Engineer with a passion for building things that matter. I like working on projects that connect people and simplify tasks, whether it&apos;s through full-stack web apps, backend systems, or hackathon-driven prototypes.
               </p>
               <p>
-                One of my key projects is Univoice, designed to bridge the gap between high school graduates and college mentors. 
-                I&apos;ve also built projects around expense tracking and SaaS optimization.
-              </p>
-              <p>
-                My focus areas are Java, Spring Boot, and Python, and I&apos;m continuously exploring how these technologies can power practical, impactful applications.
+                My focus areas are Java, Spring Boot, and I&apos;m continuously exploring how these technologies can power practical, impactful applications.
               </p>
             </div>
 
@@ -82,7 +74,6 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* Right column - Skills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,7 +81,7 @@ export default function AboutPage() {
           >
             <h2 className="text-2xl font-bold mb-4">Skills</h2>
             {(Object.keys(skills) as string[]).map((category) => {
-              const list = skills[category as SkillCategory] ?? []; // ✅ Fix: avoid undefined
+              const list = skills[category as SkillCategory] ?? [];
               return (
                 <div key={category} className="mb-6">
                   <h3 className="text-lg font-semibold mb-3">{category}</h3>

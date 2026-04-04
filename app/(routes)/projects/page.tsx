@@ -6,7 +6,7 @@ import { ProjectCard } from "@/components/projects/project-card";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/data/projects";
 
-const allTechnologies = ["Java", "OOP", "DSA", "Backend Development", "REST APIs", "Spring Boot", "MySQL", "Git"];
+const allTechnologies = ["HTML", "CSS", "JavaScript", "Java", "OOP", "DSA", "Spring Boot", "Git"];
 
 export default function ProjectsPage() {
 

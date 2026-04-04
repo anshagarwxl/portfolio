@@ -19,12 +19,8 @@ export const experiences: Experience[] = [
       location: "On-Site/Noida",
       startDate: "June 2025",
       endDate: "July 2025",
-      description: "Worked on internal software solutions and automation tasks during the summer internship program.",
-      achievements: [
-          "Developed features for internal web applications using Java and Spring Boot",
-          "Collaborated with cross-functional teams to implement automated testing pipelines",
-          "Contributed to code optimization, improving system performance by 20%"
-      ],
+      description: "Software Engineering Intern – Backend\nInfogain | June 2025 – July 2025 | On-site, Noida\n\nAnalyzed a NETSPI vulnerability assessment report of a client website, identifying additional security gaps and suggesting improved remediation strategies\nDeveloped a Java-based internal module using OOP principles for employee data management, implementing CRUD operations, access control, and basic reporting features\nGained hands-on experience in backend development and enterprise application design practices",
+      achievements: [],
       type: 'internship'
   },
   {

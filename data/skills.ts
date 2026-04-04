@@ -45,7 +45,7 @@ export const skills: Partial<Record<SkillCategory, Skill[]>> = {
   'Tools': [
     { name: 'Git', category: 'Tools', logoKey: 'git' },
     { name: 'GitHub', category: 'Tools', logoKey: 'github' },
-    { name: 'AWS', category: 'Tools', logoKey: 'aws' },
+{ name: 'AWS', category: 'Tools', logoKey: 'amazonwebservices' },
     { name: 'VS Code', category: 'Tools', logoKey: 'vscode' },
     { name: 'IntelliJ IDEA', category: 'Tools', logoKey: 'intellij' },
     { name: 'Figma', category: 'Tools', logoKey: 'figma' },

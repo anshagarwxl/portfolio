@@ -12,9 +12,7 @@ export function Hero() {
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
   const displayedSkills = [
     "Java Developer",
-    "Learning AI/ML",
-    "Business Enthusiast",
-    "UI/UX Designer"
+    "Business Enthusiast"
   ];
 
   // Parallax effect setup

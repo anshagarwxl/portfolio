@@ -6,9 +6,7 @@ import { ProjectCard } from "@/components/projects/project-card";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/data/projects";
 
-const allTechnologies = Array.from(
-  new Set(projects.flatMap((project) => project.technologies))
-).sort();
+const allTechnologies = ["Java", "OOP", "DSA", "Backend Development", "REST APIs", "Spring Boot", "MySQL", "Git"];
 
 export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
